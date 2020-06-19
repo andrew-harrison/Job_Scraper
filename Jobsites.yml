@@ -1,0 +1,10 @@
+Riderfirm:
+  URL: "https://www.theriderfirm.cc/pages/details-of-job-roles-we-are-currently-recruiting-for.html"
+  Class: "rte rte--indented-images"
+  Tag:  "h2"
+  False_Headings: ["How to Apply"]
+
+Muc-off:
+  URL: "https://muc-off.com/blogs/careers"
+  Class: "job-listing-container"
+  Tag: "h2"

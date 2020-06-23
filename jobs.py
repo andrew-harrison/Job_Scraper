@@ -25,6 +25,7 @@ for job, place in jobs.items():
         print(f'Existing job found: {job}')
     else:
         N_jobs.update({job: place})
+        print(f'New job found: {job}')
 
 # If arguments are given to script csv containing job titles will be updated
 write_csv = None

@@ -14,7 +14,9 @@ def GetJobs(URL_list):
 
         for job_html in joblist:
             job = job_html.string
-        
+            
+            if job == None: continue
+
             if "False_Headings" in site:
                 if job in site["False_Headings"]:
                     continue

@@ -15,15 +15,37 @@ def GetJobs(URL_list):
         else:
             joblist = class_content
 
+           
+        Valid = JobValidate(site)
+
         for job_html in joblist:
             job = job_html.string
-            
-            if job == None: continue
 
-            if "False_Headings" in site:
-                if job in site["False_Headings"]:
-                    continue
-            
-            jobs.update({job : place})
-        
+            if Valid.Validate(job):
+                jobs.update({job : place})
+
     return jobs
+
+class JobValidate:
+    def __init__(self, site):
+        self.last = False
+        self.site = site
+        print("New class created")
+
+    def Validate(self, job):
+        print("Validating ....")
+        site = self.site
+        
+        if job == None:
+            return False
+
+        if "False_Headings" in site:
+            if job in site["False_Headings"]:
+                return False
+
+        if ("Last_False_Heading" in site) and (self.last == False):
+            if job == site["Last_False_Heading"]:
+                self.last = True
+            return False
+
+        return True

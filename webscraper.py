@@ -10,7 +10,10 @@ def GetJobs(URL_list):
     
         class_content = soup.find(class_=site["Class"])
 
-        joblist = class_content.find_all(site["Tag"])
+        if "Tag" in site:
+            joblist = class_content.find_all(site["Tag"])
+        else:
+            joblist = class_content
 
         for job_html in joblist:
             job = job_html.string

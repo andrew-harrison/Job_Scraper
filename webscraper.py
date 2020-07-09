@@ -1,6 +1,31 @@
 import requests
 from bs4 import BeautifulSoup
 
+class JobValidate:
+    def __init__(self, site):
+        self.last = False
+        self.site = site
+        print("New class created")
+
+    def Validate(self, job):
+        print("Validating ....")
+        site = self.site
+        
+        if job == None:
+            return False
+
+        if "False_Headings" in site:
+            if job in site["False_Headings"]:
+                return False
+
+        if ("Last_False_Heading" in site) and (self.last == False):
+            if job == site["Last_False_Heading"]:
+                self.last = True
+            return False
+
+        return True
+
+
 def GetJobs(URL_list):
     jobs = {}
 
@@ -26,26 +51,3 @@ def GetJobs(URL_list):
 
     return jobs
 
-class JobValidate:
-    def __init__(self, site):
-        self.last = False
-        self.site = site
-        print("New class created")
-
-    def Validate(self, job):
-        print("Validating ....")
-        site = self.site
-        
-        if job == None:
-            return False
-
-        if "False_Headings" in site:
-            if job in site["False_Headings"]:
-                return False
-
-        if ("Last_False_Heading" in site) and (self.last == False):
-            if job == site["Last_False_Heading"]:
-                self.last = True
-            return False
-
-        return True

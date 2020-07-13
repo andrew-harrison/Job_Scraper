@@ -6,29 +6,9 @@
 # *False_Headings: [str] List of headings to be ignored e.g. section titles have same formatting as job titles
 # *Last_False_Heading: str if many headings on page with same formatting as job titles this defines last of the incorrect headings
 
-Riderfirm:
-  URL: "https://www.theriderfirm.cc/pages/details-of-job-roles-we-are-currently-recruiting-for.html"
+Example Company:
+  URL: "https://www.example.com"
   Class: "rte rte--indented-images"
   Tag:  "h2"
   False_Headings: ["How to Apply"]
-
-Muc-off:
-  URL: "https://muc-off.com/blogs/careers"
-  Class: "job-listing-container"
-  Tag: "h2"
-
-SWC:
-  URL: "https://www.sainsburywellcome.org/web/content/current-vacancies"
-  Class: "accordion-title"
-  Tag: "a"
-
-LUTW:
-  URL: "http://lutw.org/get-involveddonate/volunteer/"
-  Class: "text3"
-
-Alpkit:
-  URL: https://alpkit.com/pages/careers
-  Class: "cms-content"
-  Tag: ["h2", "a"]
-  False_Headings: ["jobs@alpkit.com"]
   Last_False_Heading: "Current Vacancies"
